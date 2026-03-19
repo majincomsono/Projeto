@@ -1,4 +1,4 @@
-/* style.css */
+/* style.css - Versão Responsiva para Mobile */
 * {
     margin: 0;
     padding: 0;
@@ -12,6 +12,7 @@ body {
     line-height: 1.6;
 }
 
+/* Header */
 header {
     background-color: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -28,12 +29,19 @@ header {
     color: #F97316; /* laranja */
 }
 
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
 nav a {
     text-decoration: none;
     color: #1f2937;
-    margin-left: 1.5rem;
     font-weight: 500;
     transition: color 0.3s;
+    white-space: nowrap;
 }
 
 nav a:hover {
@@ -53,44 +61,49 @@ nav a:hover {
 }
 
 #user-area {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .saudacao {
     color: #22C55E;
     font-weight: 600;
-    margin-left: 1.5rem;
     font-size: 1rem;
+    white-space: nowrap;
 }
 
 .link-doador {
-    background-color: #F97316; /* laranja para destacar */
+    background-color: #22C55E;
     color: white !important;
     padding: 0.5rem 1.2rem;
     border-radius: 30px;
-    margin-left: 1rem;
     transition: background-color 0.3s;
+    white-space: nowrap;
 }
 
 .link-doador:hover {
-    background-color: #e07b0a;
+    background-color: #16a34a;
 }
 
+/* Hero */
 .hero {
     background: linear-gradient(135deg, #F97316 0%, #22C55E 100%);
     color: white;
     text-align: center;
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
 }
 
 .hero h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     max-width: 800px;
     margin: 0 auto 1rem;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 2rem;
 }
 
@@ -109,15 +122,17 @@ nav a:hover {
     transform: scale(1.05);
 }
 
+/* Busca */
 .busca-ia {
     background-color: white;
-    padding: 3rem 5%;
+    padding: 2rem 5%;
     text-align: center;
 }
 
 .busca-ia h2 {
     color: #22C55E;
     margin-bottom: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .search-box {
@@ -125,6 +140,7 @@ nav a:hover {
     max-width: 600px;
     margin: 0 auto;
     gap: 0.5rem;
+    flex-direction: row;
 }
 
 #busca {
@@ -144,11 +160,12 @@ nav a:hover {
     background-color: #22C55E;
     color: white;
     border: none;
-    padding: 0 1.8rem;
+    padding: 0 1.5rem;
     border-radius: 30px;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s;
+    white-space: nowrap;
 }
 
 #btn-busca:hover {
@@ -163,8 +180,9 @@ nav a:hover {
     margin-right: auto;
 }
 
+/* Alimentos */
 .alimentos {
-    padding: 3rem 5%;
+    padding: 2rem 5%;
     background-color: #f3f4f6;
 }
 
@@ -172,11 +190,12 @@ nav a:hover {
     text-align: center;
     color: #F97316;
     margin-bottom: 2rem;
+    font-size: 1.5rem;
 }
 
 .grid-alimentos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 1.5rem;
 }
 
@@ -205,6 +224,7 @@ nav a:hover {
 .card-alimento h3 {
     color: #F97316;
     margin-bottom: 0.5rem;
+    font-size: 1.2rem;
 }
 
 .card-alimento p {
@@ -218,8 +238,9 @@ nav a:hover {
     font-weight: 600;
 }
 
+/* Formulários de cadastro (páginas) */
 .cadastro {
-    padding: 3rem 5%;
+    padding: 2rem 5%;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -228,6 +249,7 @@ nav a:hover {
     color: #22C55E;
     text-align: center;
     margin-bottom: 2rem;
+    font-size: 1.6rem;
 }
 
 #form-cadastro,
@@ -296,4 +318,79 @@ footer {
     text-align: center;
     padding: 1.5rem;
     margin-top: 2rem;
+}
+
+/* ========== RESPONSIVIDADE PARA CELULARES ========== */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    #user-area {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 0.5rem;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    #btn-busca {
+        padding: 0.8rem;
+    }
+
+    .grid-alimentos {
+        grid-template-columns: 1fr; /* Um card por linha */
+    }
+
+    .cadastro {
+        padding: 2rem 4%;
+    }
+
+    .cadastro h2 {
+        font-size: 1.4rem;
+    }
+
+    #form-cadastro,
+    #form-alimento {
+        padding: 1.5rem;
+    }
+}
+
+/* Ajustes para telas muito pequenas (menos de 400px) */
+@media (max-width: 400px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    .btn-cadastro,
+    .link-doador {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .saudacao {
+        font-size: 0.9rem;
+    }
 }
