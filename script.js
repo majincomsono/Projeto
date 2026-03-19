@@ -1,34 +1,31 @@
 // script.js
 
-// Mock de alimentos (exemplo)
+// Mock de alimentos (exemplo sem imagens)
 const alimentosMock = [
     {
         id: 1,
         nome: 'Pão integral (próximo ao vencimento)',
         doador: 'Padaria Pão Quente',
         local: 'Centro',
-        validade: '2025-03-25',
-        imagem: 'https://via.placeholder.com/300x150?text=Pão'
+        validade: '2025-03-25'
     },
     {
         id: 2,
         nome: 'Frutas diversas (banana, maçã)',
         doador: 'Mercado Frutal',
         local: 'Zona Sul',
-        validade: '2025-03-22',
-        imagem: 'https://via.placeholder.com/300x150?text=Frutas'
+        validade: '2025-03-22'
     },
     {
         id: 3,
         nome: 'Leite longa vida (lote próximo)',
         doador: 'Laticínios Vale Verde',
         local: 'Zona Norte',
-        validade: '2025-04-01',
-        imagem: 'https://via.placeholder.com/300x150?text=Leite'
+        validade: '2025-04-01'
     }
 ];
 
-// Função para exibir alimentos (combina mock + cadastrados)
+// Função para exibir alimentos (combina mock + cadastrados) sem imagens
 function carregarAlimentos() {
     const container = document.getElementById('lista-alimentos');
     if (!container) return;
@@ -46,8 +43,8 @@ function carregarAlimentos() {
     todosAlimentos.forEach(item => {
         const card = document.createElement('div');
         card.className = 'card-alimento';
+        // Sem a tag de imagem
         card.innerHTML = `
-            <img src="${item.imagem}" alt="${item.nome}">
             <div class="info">
                 <h3>${item.nome}</h3>
                 <p><strong>Doador:</strong> ${item.doador}</p>
@@ -91,7 +88,7 @@ function exibirSaudacao() {
     }
 }
 
-// Função de busca (simulação de IA)
+// Função de busca (simulação de IA) sem imagens
 function setupBusca() {
     const btnBusca = document.getElementById('btn-busca');
     if (!btnBusca) return;
@@ -119,7 +116,6 @@ function setupBusca() {
             resultados.forEach(item => {
                 html += `
                     <div class="card-alimento">
-                        <img src="${item.imagem}" alt="${item.nome}">
                         <div class="info">
                             <h3>${item.nome}</h3>
                             <p><strong>Doador:</strong> ${item.doador}</p>
