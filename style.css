@@ -1,4 +1,4 @@
-/* style.css - Versão Responsiva para Mobile */
+/* style.css - Versão Responsiva para Mobile (sem imagens) */
 * {
     margin: 0;
     padding: 0;
@@ -211,12 +211,7 @@ nav a:hover {
     transform: translateY(-5px);
 }
 
-.card-alimento img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
+/* Removido o estilo de imagem */
 .card-alimento .info {
     padding: 1rem;
 }
