@@ -35,10 +35,7 @@ function carregarAlimentos() {
 
     container.innerHTML = '';
 
-    // Recupera alimentos cadastrados do localStorage
     const alimentosCadastrados = JSON.parse(localStorage.getItem('foodloop_alimentos')) || [];
-
-    // Junta mock e cadastrados
     const todosAlimentos = [...alimentosMock, ...alimentosCadastrados];
 
     if (todosAlimentos.length === 0) {
@@ -62,7 +59,7 @@ function carregarAlimentos() {
     });
 }
 
-// Função para exibir saudação e link condicional no cabeçalho
+// Função para exibir saudação e link condicional no cabeçalho (agora para doador)
 function exibirSaudacao() {
     const userArea = document.getElementById('user-area');
     if (!userArea) return;
@@ -73,12 +70,12 @@ function exibirSaudacao() {
     if (nomeUsuario) {
         let html = `<span class="saudacao">Olá, ${nomeUsuario}!</span>`;
 
-        // Se for doador, adiciona link para cadastrar alimento
+        // Se for DOADOR, adiciona link para cadastrar alimento
         if (tipoUsuario === 'doador') {
             html += `<a href="cadastro-alimento.html" class="link-doador">Cadastrar Alimentos</a>`;
         }
 
-        // Botão de logout (opcional)
+        // Botão de logout
         html += `<a href="#" id="logout" style="margin-left:1rem; color:#F97316;">Sair</a>`;
 
         userArea.innerHTML = html;
