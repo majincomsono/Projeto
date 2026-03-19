@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodLoop - Conectando Alimentos, Evitando Desperdício</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">FoodLoop</div>
+        <nav>
+            <a href="#como-funciona">Como funciona</a>
+            <a href="#alimentos">Alimentos disponíveis</a>
+            <span id="user-area">
+                <!-- Aqui será inserido o botão de cadastro ou saudação + link para cadastrar alimento (se doador) -->
+            </span>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Conectamos doadores e receptores para aproveitar alimentos próximos ao vencimento</h1>
+            <p>Junte-se ao FoodLoop e ajude a reduzir o desperdício enquanto alimenta quem precisa.</p>
+            <a href="cadastro.html" class="btn-cta">Quero participar</a>
+        </section>
+
+        <section class="busca-ia">
+            <h2>Encontre alimentos perto de você</h2>
+            <div class="search-box">
+                <input type="text" id="busca" placeholder="Digite um alimento (ex: pão, frutas, leite)" />
+                <button id="btn-busca">Buscar com IA 🧠</button>
+            </div>
+            <div id="resultados-busca" class="resultados"></div>
+        </section>
+
+        <section id="alimentos" class="alimentos">
+            <h2>Alimentos disponíveis recentemente</h2>
+            <div id="lista-alimentos" class="grid-alimentos">
+                <!-- Itens serão inseridos via JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>FoodLoop - Reduzindo o desperdício de alimentos &copy; 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            exibirSaudacao();
+            carregarAlimentos();
+        });
+    </script>
+</body>
+</html>

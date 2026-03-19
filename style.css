@@ -1,0 +1,299 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9fafb;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #F97316; /* laranja */
+}
+
+nav a {
+    text-decoration: none;
+    color: #1f2937;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #F97316;
+}
+
+.btn-cadastro {
+    background-color: #F97316;
+    color: white !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    transition: background-color 0.3s;
+}
+
+.btn-cadastro:hover {
+    background-color: #e07b0a;
+}
+
+#user-area {
+    display: inline-block;
+}
+
+.saudacao {
+    color: #22C55E;
+    font-weight: 600;
+    margin-left: 1.5rem;
+    font-size: 1rem;
+}
+
+.link-doador {
+    background-color: #F97316; /* laranja para destacar */
+    color: white !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    margin-left: 1rem;
+    transition: background-color 0.3s;
+}
+
+.link-doador:hover {
+    background-color: #e07b0a;
+}
+
+.hero {
+    background: linear-gradient(135deg, #F97316 0%, #22C55E 100%);
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    max-width: 800px;
+    margin: 0 auto 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-cta {
+    background-color: white;
+    color: #F97316;
+    padding: 0.8rem 2rem;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.btn-cta:hover {
+    transform: scale(1.05);
+}
+
+.busca-ia {
+    background-color: white;
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+.busca-ia h2 {
+    color: #22C55E;
+    margin-bottom: 1.5rem;
+}
+
+.search-box {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 0.5rem;
+}
+
+#busca {
+    flex: 1;
+    padding: 0.8rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 30px;
+    font-size: 1rem;
+    outline: none;
+}
+
+#busca:focus {
+    border-color: #F97316;
+}
+
+#btn-busca {
+    background-color: #22C55E;
+    color: white;
+    border: none;
+    padding: 0 1.8rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#btn-busca:hover {
+    background-color: #16a34a;
+}
+
+.resultados {
+    margin-top: 2rem;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alimentos {
+    padding: 3rem 5%;
+    background-color: #f3f4f6;
+}
+
+.alimentos h2 {
+    text-align: center;
+    color: #F97316;
+    margin-bottom: 2rem;
+}
+
+.grid-alimentos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-alimento {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card-alimento:hover {
+    transform: translateY(-5px);
+}
+
+.card-alimento img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-alimento .info {
+    padding: 1rem;
+}
+
+.card-alimento h3 {
+    color: #F97316;
+    margin-bottom: 0.5rem;
+}
+
+.card-alimento p {
+    color: #4b5563;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.card-alimento .validade {
+    color: #22C55E;
+    font-weight: 600;
+}
+
+.cadastro {
+    padding: 3rem 5%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cadastro h2 {
+    color: #22C55E;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#form-cadastro,
+#form-alimento {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#form-cadastro label,
+#form-alimento label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+#form-cadastro input,
+#form-cadastro select,
+#form-alimento input {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+#form-cadastro input:focus,
+#form-cadastro select:focus,
+#form-alimento input:focus {
+    outline: 2px solid #F97316;
+    border-color: transparent;
+}
+
+#form-cadastro button,
+#form-alimento button {
+    background-color: #F97316;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+#form-cadastro button:hover,
+#form-alimento button:hover {
+    background-color: #e07b0a;
+}
+
+#mensagem-cadastro,
+#mensagem-alimento {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+footer {
+    background-color: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}

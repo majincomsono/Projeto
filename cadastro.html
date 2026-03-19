@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodLoop - Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">FoodLoop</div>
+        <nav>
+            <a href="index.html">Voltar para início</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cadastro">
+            <h2>Cadastre-se no FoodLoop</h2>
+            <form id="form-cadastro">
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="telefone">Telefone (opcional)</label>
+                <input type="tel" id="telefone" name="telefone">
+
+                <label for="tipo">Você é:</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="">Selecione...</option>
+                    <option value="doador">Doador (mercado, padaria, restaurante, produtor)</option>
+                    <option value="receptor">Receptor (pessoa física que deseja alimentos)</option>
+                </select>
+
+                <label for="endereco">Endereço (cidade/região)</label>
+                <input type="text" id="endereco" name="endereco" required>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+            <div id="mensagem-cadastro"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>FoodLoop - Reduzindo o desperdício de alimentos &copy; 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('form-cadastro').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const tipo = document.getElementById('tipo').value;
+            // Salva nome e tipo no localStorage
+            localStorage.setItem('foodloop_user', nome);
+            localStorage.setItem('foodloop_user_tipo', tipo);
+            // Redireciona para a página inicial
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
