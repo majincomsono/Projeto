@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>FoodLoop - Cadastrar Alimento</title>
+    <title>FoodLoop - Cadastro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,23 +16,30 @@
 
     <main>
         <section class="cadastro">
-            <h2>Cadastrar Alimento para Doação</h2>
-            <form id="form-alimento">
-                <label for="nome-alimento">Nome do Alimento</label>
-                <input type="text" id="nome-alimento" name="nome-alimento" required>
+            <h2>Cadastre-se no FoodLoop</h2>
+            <form id="form-cadastro">
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" name="nome" required>
 
-                <label for="doador-alimento">Seu nome / estabelecimento</label>
-                <input type="text" id="doador-alimento" name="doador-alimento" required>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
 
-                <label for="local-alimento">Local (cidade/região)</label>
-                <input type="text" id="local-alimento" name="local-alimento" required>
+                <label for="telefone">Telefone (opcional)</label>
+                <input type="tel" id="telefone" name="telefone">
 
-                <label for="validade-alimento">Data de validade</label>
-                <input type="date" id="validade-alimento" name="validade-alimento" required>
+                <label for="tipo">Você é:</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="">Selecione...</option>
+                    <option value="doador">Doador (mercado, padaria, restaurante, produtor)</option>
+                    <option value="receptor">Receptor (pessoa física que deseja receber alimentos)</option>
+                </select>
 
-                <button type="submit">Cadastrar Alimento</button>
+                <label for="endereco">Endereço (cidade/região)</label>
+                <input type="text" id="endereco" name="endereco" required>
+
+                <button type="submit">Cadastrar</button>
             </form>
-            <div id="mensagem-alimento"></div>
+            <div id="mensagem-cadastro"></div>
         </section>
     </main>
 
@@ -42,28 +49,12 @@
 
     <script src="script.js"></script>
     <script>
-        document.getElementById('form-alimento').addEventListener('submit', function(e) {
+        document.getElementById('form-cadastro').addEventListener('submit', function(e) {
             e.preventDefault();
-
-            const nome = document.getElementById('nome-alimento').value;
-            const doador = document.getElementById('doador-alimento').value;
-            const local = document.getElementById('local-alimento').value;
-            const validade = document.getElementById('validade-alimento').value;
-
-            const novoAlimento = {
-                id: Date.now(),
-                nome: nome,
-                doador: doador,
-                local: local,
-                validade: validade,
-                // imagem removida, mas podemos deixar uma string vazia ou não usar
-                imagem: ''
-            };
-
-            let alimentosCadastrados = JSON.parse(localStorage.getItem('foodloop_alimentos')) || [];
-            alimentosCadastrados.push(novoAlimento);
-            localStorage.setItem('foodloop_alimentos', JSON.stringify(alimentosCadastrados));
-
+            const nome = document.getElementById('nome').value;
+            const tipo = document.getElementById('tipo').value;
+            localStorage.setItem('foodloop_user', nome);
+            localStorage.setItem('foodloop_user_tipo', tipo);
             window.location.href = 'index.html';
         });
     </script>
