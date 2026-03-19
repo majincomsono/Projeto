@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>FoodLoop - Cadastrar Alimento</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -50,7 +50,6 @@
             const local = document.getElementById('local-alimento').value;
             const validade = document.getElementById('validade-alimento').value;
 
-            // Cria objeto do alimento
             const novoAlimento = {
                 id: Date.now(),
                 nome: nome,
@@ -60,12 +59,10 @@
                 imagem: 'https://via.placeholder.com/300x150?text=Alimento'
             };
 
-            // Recupera lista atual de alimentos cadastrados
             let alimentosCadastrados = JSON.parse(localStorage.getItem('foodloop_alimentos')) || [];
             alimentosCadastrados.push(novoAlimento);
             localStorage.setItem('foodloop_alimentos', JSON.stringify(alimentosCadastrados));
 
-            // Redireciona para a página inicial
             window.location.href = 'index.html';
         });
     </script>
